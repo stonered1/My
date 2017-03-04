@@ -1,4 +1,4 @@
-package my2017.my;
+package my2017.layoutinflaterdemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("my2017.custom_title_bar", appContext.getPackageName());
+        assertEquals("my2017.layoutinflaterdemo", appContext.getPackageName());
     }
 }

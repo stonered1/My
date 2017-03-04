@@ -1,18 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:stone="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="my2017.my.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
-</RelativeLayout>
+    <my2017.my.PercentView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:background="@color/red"
+        android:padding="10dp"
+        stone:percent_circle_gravity="center"
+        stone:percent_circle_progress="30"
+        stone:percent_circle_radius="50dp"
+        stone:percent_progress_color="@color/blue"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <Button
+            android:id="@+id/title_bar_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+
+            android:minHeight="45dp"
+            android:minWidth="45dp"
+            android:textSize="14sp"
+            android:drawableBottom="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/title_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="登录"
+            android:singleLine="true"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/title_bar_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="7dp"
+            android:text="提交"
+
+
+            android:minHeight="45dp"
+            android:minWidth="45dp"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <my2017.my.uitl.CustomTitleBar android:id="@+id/my_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        stone:left_button_text="左边"
+        stone:left_button_text_color="@color/red"
+        stone:right_button_drawable="@mipmap/ic_launcher"
+        stone:title_background_color="@color/blue"
+        stone:title_text="标题5"
+        />
+</LinearLayout>
