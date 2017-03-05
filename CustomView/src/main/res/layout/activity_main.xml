@@ -9,67 +9,88 @@
     android:orientation="vertical"
     tools:context="my2017.my.MainActivity">
 
-    <my2017.my.PercentView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_margin="10dp"
-        android:background="@color/red"
-        android:padding="10dp"
-        stone:percent_circle_gravity="center"
-        stone:percent_circle_progress="30"
-        stone:percent_circle_radius="50dp"
-        stone:percent_progress_color="@color/blue"
-        />
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="45dp">
+            <my2017.my.PercentView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                android:background="@color/red"
+                android:padding="10dp"
+                stone:percent_circle_gravity="center"
+                stone:percent_circle_progress="30"
+                stone:percent_circle_radius="50dp"
+                stone:percent_progress_color="@color/blue"
+                />
 
-        <Button
-            android:id="@+id/title_bar_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
 
-            android:minHeight="45dp"
-            android:minWidth="45dp"
-            android:textSize="14sp"
-            android:drawableBottom="@mipmap/ic_launcher"/>
+                <Button
+                    android:id="@+id/title_bar_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
 
-        <TextView
-            android:id="@+id/title_bar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="登录"
-            android:singleLine="true"
-            android:textSize="17sp" />
+                    android:minHeight="45dp"
+                    android:minWidth="45dp"
+                    android:textSize="14sp"
+                    android:drawableBottom="@mipmap/ic_launcher"/>
 
-        <Button
-            android:id="@+id/title_bar_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="7dp"
-            android:text="提交"
+                <TextView
+                    android:id="@+id/title_bar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="登录"
+                    android:singleLine="true"
+                    android:textSize="17sp" />
+
+                <Button
+                    android:id="@+id/title_bar_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="7dp"
+                    android:text="提交"
 
 
-            android:minHeight="45dp"
-            android:minWidth="45dp"
-            android:textSize="14sp" />
-    </RelativeLayout>
+                    android:minHeight="45dp"
+                    android:minWidth="45dp"
+                    android:textSize="14sp" />
+            </RelativeLayout>
 
-    <my2017.my.uitl.CustomTitleBar android:id="@+id/my_titlebar"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        stone:left_button_text="左边"
-        stone:left_button_text_color="@color/red"
-        stone:right_button_drawable="@mipmap/ic_launcher"
-        stone:title_background_color="@color/blue"
-        stone:title_text="标题5"
-        />
+            <my2017.my.uitl.CustomTitleBar android:id="@+id/my_titlebar"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="100dp"
+                                           android:layout_marginTop="10dp"
+                                           stone:left_button_text="左边"
+                                           stone:left_button_text_color="@color/red"
+                                           stone:right_button_drawable="@mipmap/ic_launcher"
+                                           stone:title_background_color="@color/blue"
+                                           stone:title_text="标题5"
+                />
+
+            <com.whoislcj.views.TagsLayout
+                android:id="@+id/image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                stone:tagHorizontalSpace="10dp"
+                stone:tagVerticalSpace="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
 </LinearLayout>
