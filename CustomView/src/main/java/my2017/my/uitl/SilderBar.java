@@ -49,7 +49,7 @@ public class SilderBar extends View {
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
 
-        if ()
+
     }
 
     /*@Override
