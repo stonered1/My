@@ -5,6 +5,8 @@ import android.graphics.Matrix;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 /**
  * Created by Stone on 17/3/6.
@@ -20,10 +22,17 @@ public class CustomImg extends ViewGroup {
     public CustomImg(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+    ListView list;
 
 
     public CustomImg(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
     }
 
     @Override
