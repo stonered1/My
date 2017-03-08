@@ -1,6 +1,7 @@
 package my2017.listviewdemo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import my2017.listviewdemo.bean.Datas;
+import my2017.listviewdemo.bean.GridViewActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             return position;
         }
 
+        Intent intent;
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder viewHolder;
@@ -92,6 +95,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Toast.makeText(MainActivity.this, item +" " +position  , Toast.LENGTH_SHORT).show();
+                    if (item == 0 && position ==0){
+                        if (intent == null){
+                            intent = new Intent(MainActivity.this, GridViewActivity.class);
+                        }
+
+                        startActivity(intent);
+                    }
                 }
             });
 
