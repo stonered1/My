@@ -10,15 +10,15 @@ import android.widget.GridView;
 
 public class GridViewForScroll extends GridView{
 
-
     public GridViewForScroll(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
-            int mExpandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
-            super.onMeasure(widthMeasureSpec, mExpandSpec);
-        }
+        //0x7fffffff
+        int mExpandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+        super.onMeasure(widthMeasureSpec, mExpandSpec);
+    }
 
 }
 

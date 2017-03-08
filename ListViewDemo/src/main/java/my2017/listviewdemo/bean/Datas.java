@@ -1,5 +1,7 @@
 package my2017.listviewdemo.bean;
 
+import android.view.View;
+
 import java.util.List;
 
 /**
