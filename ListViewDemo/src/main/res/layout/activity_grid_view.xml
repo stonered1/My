@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gridview_selector"
-    tools:context="my2017.listviewdemo.bean.GridViewActivity">
+    tools:context="my2017.listviewdemo.GridViewActivity">
+
+    <GridView android:id="@+id/my_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="70dp"
+        android:numColumns="4"
+        android:gravity="center"
+        android:horizontalSpacing="2dp"/>
 
 </LinearLayout>
