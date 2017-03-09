@@ -56,7 +56,10 @@ public class GridViewActivity extends AppCompatActivity implements AbsListView.M
 
         View v = LayoutInflater.from(this).inflate(R.layout.actionbar_layout, null);
         mTextView = (TextView) v.findViewById(R.id.actionbar_tv);
-        return false;
+        mTextView.setText(formatString(gridView.getCheckedItemCount()));
+        mode.setCustomView(v);
+        getMenuInflater().inflate(R.menu.action_menu, menu);
+        return true;
     }
 
     @Override
@@ -75,9 +78,13 @@ public class GridViewActivity extends AppCompatActivity implements AbsListView.M
     }
 
 
-    private String formatString(int count){
+    /*private String formatString(int count){
 
-        return String.format(getString(R.string));
+        //return String.format(getResources().getString(R.string.selection), Integer.);
+    }
+*/
+    private String formatString(int count) {
+        return String.format(getString(R.string.selection), count);
     }
 
 
