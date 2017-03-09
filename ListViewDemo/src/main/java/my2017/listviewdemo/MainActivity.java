@@ -88,10 +88,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Toast.makeText(MainActivity.this, item +" " +position  , Toast.LENGTH_SHORT).show();
                     if (item == 0 && position ==0){
-                        if (intent == null){
-                            intent = new Intent(MainActivity.this, GridViewActivity.class);
-                        }
+                        intent = new Intent(MainActivity.this, GridViewActivity.class);
+                        startActivity(intent);
+                    }
 
+                    if (item == 0 && position == 1){
+                        intent = new Intent(MainActivity.this, ImageViewActivity.class);
                         startActivity(intent);
                     }
                 }
