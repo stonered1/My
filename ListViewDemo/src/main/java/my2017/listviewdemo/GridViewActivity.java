@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ActionMode;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.HashMap;
 
@@ -23,6 +25,7 @@ public class GridViewActivity extends AppCompatActivity implements AbsListView.M
 
     private GridView gridView;
     private GridAdapter adapter;
+    private TextView mTextView;
     private int[] imgsId = new int[]{
             R.mipmap.img_1, R.mipmap.img_2, R.mipmap.img_3, R.mipmap.img_4,
             R.mipmap.img_5, R.mipmap.img_6, R.mipmap.img_7, R.mipmap.img_8,
@@ -47,8 +50,12 @@ public class GridViewActivity extends AppCompatActivity implements AbsListView.M
 
     }
 
+
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+
+        View v = LayoutInflater.from(this).inflate(R.layout.actionbar_layout, null);
+        mTextView = (TextView) v.findViewById(R.id.actionbar_tv);
         return false;
     }
 
@@ -65,6 +72,12 @@ public class GridViewActivity extends AppCompatActivity implements AbsListView.M
     @Override
     public void onDestroyActionMode(ActionMode mode) {
 
+    }
+
+
+    private String formatString(int count){
+
+        return String.format(getString(R.string));
     }
 
 

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ListViewDemo</string>
+    <style name="selection">被选中%s个</style>
 </resources>
