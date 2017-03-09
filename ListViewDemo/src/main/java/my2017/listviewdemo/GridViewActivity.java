@@ -1,6 +1,7 @@
 package my2017.listviewdemo;
 
 import android.content.Context;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ActionMode;
@@ -21,6 +22,10 @@ import java.util.HashMap;
 import my2017.listviewdemo.R;
 import my2017.listviewdemo.util.GridItem;
 
+
+/**
+ * girdView 的多项选
+ */
 public class GridViewActivity extends AppCompatActivity implements AbsListView.MultiChoiceModeListener {
 
     private GridView gridView;
@@ -38,6 +43,8 @@ public class GridViewActivity extends AppCompatActivity implements AbsListView.M
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //ActionBar actionBar = getSupportActionBar();//高版本可以换成 ActionBar actionBar = getActionBar();
         setContentView(R.layout.activity_grid_view);
         gridView = (GridView) findViewById(R.id.my_grid_view);
         gridView.setChoiceMode(GridView.CHOICE_MODE_MULTIPLE_MODAL);

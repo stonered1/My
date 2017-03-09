@@ -24,11 +24,11 @@ public class GridItem extends RelativeLayout implements Checkable{
     private ImageView mImageView, mSelectImgeView;
 
     public GridItem(Context context) {
-        super(context, null, 0);
+        this(context, null, 0);
     }
 
     public GridItem(Context context, AttributeSet attrs) {
-        super(context, attrs, 0);
+        this(context, attrs, 0);
     }
 
     public GridItem(Context context, AttributeSet attrs, int defStyleAttr) {
