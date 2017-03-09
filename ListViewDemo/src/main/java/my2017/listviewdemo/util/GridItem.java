@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Checkable;
 import android.widget.ImageView;
@@ -23,7 +24,7 @@ public class GridItem extends RelativeLayout implements Checkable{
     private ImageView mImageView, mSelectImgeView;
 
     public GridItem(Context context) {
-        super(context, null);
+        super(context, null, 0);
     }
 
     public GridItem(Context context, AttributeSet attrs) {
@@ -33,8 +34,7 @@ public class GridItem extends RelativeLayout implements Checkable{
     public GridItem(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
-        LinearLayout .inflate(context, R.layout.grid_item, this);
-
+        LayoutInflater.from(context).inflate(R.layout.grid_item, this);
         mImageView = (ImageView) findViewById(R.id.img_view);
         mSelectImgeView = (ImageView) findViewById(R.id.img_select);
     }

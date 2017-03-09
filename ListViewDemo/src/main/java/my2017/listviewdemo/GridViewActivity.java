@@ -26,13 +26,15 @@ public class GridViewActivity extends AppCompatActivity implements AbsListView.M
     private GridView gridView;
     private GridAdapter adapter;
     private TextView mTextView;
+    private final static int MENU_SELECT_ALL = 0;
+    private final static int MENU_UNSELECT_ALL = MENU_SELECT_ALL + 1;
     private int[] imgsId = new int[]{
             R.mipmap.img_1, R.mipmap.img_2, R.mipmap.img_3, R.mipmap.img_4,
             R.mipmap.img_5, R.mipmap.img_6, R.mipmap.img_7, R.mipmap.img_8,
             R.mipmap.img_9, R.mipmap.img_1, R.mipmap.img_2, R.mipmap.img_3
     };
 
-    private HashMap<Integer, Boolean>  mSecteMaps = new HashMap<>();
+    private HashMap<Integer, Boolean>  mSecteMaps = new HashMap<Integer, Boolean>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +49,9 @@ public class GridViewActivity extends AppCompatActivity implements AbsListView.M
 
     @Override
     public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-
+        mTextView.setText(formatString(gridView.getCheckedItemCount()));
+        mSecteMaps.put(position, checked);
+        mode.invalidate();
     }
 
 
@@ -64,18 +68,37 @@ public class GridViewActivity extends AppCompatActivity implements AbsListView.M
 
     @Override
     public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-        return false;
+        menu.getItem(MENU_SELECT_ALL).setEnabled(gridView.getCheckedItemCount() != gridView.getCount());
+        return true;
     }
 
     @Override
     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-        return false;
+        switch (item.getItemId()) {
+            case R.id.menu_select:
+
+                for (int i = 0; i < gridView.getCount(); i++) {
+                    gridView.setItemChecked(i, true);
+                    mSecteMaps.put(i, true);
+                }
+                break;
+            case R.id.menu_unselect:
+                for (int i = 0; i < gridView.getCount(); i++) {
+                    gridView.setItemChecked(i, false);
+                    mSecteMaps.clear();
+                }
+                break;
+            default:
+                break;
+        }
+        return true;
     }
 
     @Override
     public void onDestroyActionMode(ActionMode mode) {
-
+        gridView.deferNotifyDataSetChanged();
     }
+
 
 
     /*private String formatString(int count){
@@ -117,14 +140,13 @@ public class GridViewActivity extends AppCompatActivity implements AbsListView.M
                 gridItem = new GridItem(mContent);
                 gridItem.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         WindowManager.LayoutParams.MATCH_PARENT));
-                convertView.setTag(gridItem);
             }else {
-                gridItem = (GridItem) convertView.getTag();
+                gridItem = (GridItem) convertView;
             }
 
             gridItem.setImgResId(imgsId[position]);
-            //gridItem.setChecked();
-            return convertView;
+            gridItem.setChecked(mSecteMaps.get(position) == null ? false : mSecteMaps.get(position));
+            return gridItem;
         }
 
 
