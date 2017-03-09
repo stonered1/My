@@ -9,6 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/CustomView" />
+            <option value="$PROJECT_DIR$/LayoutInflaterDemo" />
+            <option value="$PROJECT_DIR$/ListViewDemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

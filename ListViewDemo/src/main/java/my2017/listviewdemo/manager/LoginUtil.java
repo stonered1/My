@@ -5,5 +5,5 @@ package my2017.listviewdemo.manager;
  */
 
 public class LoginUtil {
-    
+
 }

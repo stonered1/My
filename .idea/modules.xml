@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CustomView/CustomView.iml" filepath="$PROJECT_DIR$/CustomView/CustomView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LayoutInflaterDemo/LayoutInflaterDemo.iml" filepath="$PROJECT_DIR$/LayoutInflaterDemo/LayoutInflaterDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ListViewDemo/ListViewDemo.iml" filepath="$PROJECT_DIR$/ListViewDemo/ListViewDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/My.iml" filepath="$PROJECT_DIR$/My.iml" />
     </modules>
   </component>
