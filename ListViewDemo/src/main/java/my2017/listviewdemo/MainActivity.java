@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Toast.makeText(MainActivity.this, ""+position, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * ListView的适配器
+     */
     class MyAdapter extends BaseAdapter {
 
         private Context context;
@@ -87,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Toast.makeText(MainActivity.this, item +" " +position  , Toast.LENGTH_SHORT).show();
-                    if (item == 0 && position ==0){
+                    if (item == 0 && position ==0){//去gridView多选界面
                         intent = new Intent(MainActivity.this, GridViewActivity.class);
                         startActivity(intent);
                     }
