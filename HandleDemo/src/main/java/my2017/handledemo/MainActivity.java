@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private Button button;
     class CalThread extends Thread{
 
         public Handler mHandler;
@@ -23,12 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 public void handleMessage(Message msg) {
                     super.handleMessage(msg);
 
-                    new Thread(){
-                        @Override
-                        public void run() {
-                            
-                        }
-                    }.start();
+                    button.setText("Stone");
 
 
                 }
@@ -36,10 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initView();
         final CalThread calThread = new CalThread();
         calThread.start();
         Button button = (Button) findViewById(R.id.my_button);
@@ -49,5 +48,11 @@ public class MainActivity extends AppCompatActivity {
                 calThread.mHandler.sendEmptyMessage(1);
             }
         });
+    }
+
+    private void initView() {
+
+        button = (Button) findViewById(R.id.my_button);
+
     }
 }
