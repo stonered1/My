@@ -10,20 +10,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="my2017.listviewdemo.MainActivity">
-
-
-
-    <ListView android:id="@+id/my_list_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+    tools:context="my2017.intentdemo.MainActivity">
 
     <Button android:id="@+id/my_button"
-            android:layout_weight="0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="dianwo"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置闹钟!"/>
 
-
+    <Button android:id="@+id/goto_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去相机"/>
 </LinearLayout>
