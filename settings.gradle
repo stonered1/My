@@ -1,1 +1,1 @@
-include ':CustomView', ':LayoutInflaterDemo', ':ListViewDemo', ':HandleDemo', ':IntentDemo'
+include ':CustomView', ':LayoutInflaterDemo', ':ListViewDemo', ':HandleDemo', ':IntentDemo', ':SideBarDemo'
