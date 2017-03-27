@@ -1,12 +1,15 @@
 package my2017.sidebardemo.adapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.List;
 
+import my2017.sidebardemo.R;
 import my2017.sidebardemo.bean.DataBean;
 
 /**
@@ -44,9 +47,25 @@ public class ListLetterAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        HoldView holdView = null;
+        if (convertView == null){
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_list_view, null);
+            holdView = new HoldView();
+            holdView.tv_firstLetter = (TextView) convertView.findViewById(R.id.firstletter);
+            holdView.tv_name = (TextView) convertView.findViewById(R.id.name);
+            convertView.setTag(holdView);
+        } else {
+            holdView = (HoldView) convertView.getTag();
+        }
+
+        
+        return convertView;
     }
 
+    private class HoldView{
+        public TextView tv_firstLetter;
+        public TextView tv_name;
+    }
     private void initList(){
 
     }
